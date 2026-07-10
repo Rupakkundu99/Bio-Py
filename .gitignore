@@ -68,5 +68,4 @@ venv.bak/
 
 # Generated datasets and training output
 data/
-prediction_result.png
-prediction_result_standard.png
+
