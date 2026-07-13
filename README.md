@@ -98,7 +98,7 @@ python src/train.py --epochs 8 --num-samples 40 --lr 0.001
 ```
 ```
 Epoch  | Train Loss | Val Loss   | Train Acc | Val Acc   | Val F1
-================================================================
+===============================================================
 1      | 0.5921     | 0.6822     | 84.38%    | 62.50%    | 0.7692
 4      | 0.1993     | 0.4163     | 100.00%   | 87.50%    | 0.9091
 8      | 0.0561     | 0.0699     | 100.00%   | 100.00%   | 1.0000
@@ -108,6 +108,8 @@ The model quickly learns to tell the two classes apart, reaching perfect
 validation accuracy by the final epoch.
 
 ![Training curves](demo_images/training_curves.png)
+
+Image file: demo_images/training_curves.png
 
 ### Step 2 — Predict Protein A
 
@@ -123,6 +125,8 @@ Confidence:  98.42%
 ```
 
 ![Thermostable protein prediction](demo_images/demo_prediction_thermostable.png)
+
+Image file: demo_images/demo_prediction_thermostable.png
 
 Reading the four panels left to right:
 1. **Backbone Proximity** — bright, tightly clustered regions show a
@@ -152,6 +156,8 @@ Confidence:  87.16%
 ```
 
 ![Standard protein prediction](demo_images/demo_prediction_standard.png)
+
+Image file: demo_images/demo_prediction_standard.png
 
 Here the pattern flips: the proximity map is more diffuse, confidence
 regions are patchier, and the Grad-CAM overlay lights up the *loosely
