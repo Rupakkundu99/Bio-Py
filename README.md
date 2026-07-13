@@ -107,7 +107,7 @@ Epoch  | Train Loss | Val Loss   | Train Acc | Val Acc   | Val F1
 The model quickly learns to tell the two classes apart, reaching perfect
 validation accuracy by the final epoch.
 
-![Training curves](demo_images/training_curves.png)
+![Training curves](training_curves.png)
 
 Image file: demo_images/training_curves.png
 
@@ -124,7 +124,7 @@ Probability: 0.9842 (98.42%)
 Confidence:  98.42%
 ```
 
-![Thermostable protein prediction](demo_images/demo_prediction_thermostable.png)
+![Thermostable protein prediction](demo_prediction_thermostable.png)
 
 Image file: demo_images/demo_prediction_thermostable.png
 
@@ -155,7 +155,7 @@ Probability: 0.1284 (12.84%)
 Confidence:  87.16%
 ```
 
-![Standard protein prediction](demo_images/demo_prediction_standard.png)
+![Standard protein prediction](demo_prediction_standard.png)
 
 Image file: demo_images/demo_prediction_standard.png
 
