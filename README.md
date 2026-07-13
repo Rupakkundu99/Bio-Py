@@ -1,4 +1,17 @@
+---
+title: AF Thermostability CNN
+emoji: 🧬
+colorFrom: indigo
+colorTo: purple
+sdk: gradio
+sdk_version: 6.20.0
+app_file: app.py
+pinned: false
+license: mit
+---
+
 # AF-Thermostability-CNN: Protein Thermostability Predictor
+
 
 A production-ready machine learning pipeline that uses Google AlphaFold structural predictions to predict protein thermostability. The pipeline parses PDB and PAE structures, encodes them into a 3-channel 2D spatial representation (representing distance topology, local structural confidence, and alignment confidence), and processes them with a PyTorch 2D Convolutional Neural Network (CNN).
 
@@ -80,8 +93,34 @@ The `--plot` flag generates a high-quality visualization named `prediction_resul
 ---
 
 ## 4. File Structure
+*   `app.py`: Gradio web application for interactive predictions.
 *   `src/data_loader.py`: Handles downloading from AlphaFold DB, parsing coordinates and B-factors, parsing PAE files, generating multi-channel matrices, padding/truncating, and synthetic data generation.
 *   `src/model.py`: Neural network definition (4x Conv2D, MaxPool, AdaptiveAvgPool, Linear classification head).
 *   `src/train.py`: Data loaders initialization, optimization, evaluation metric calculations, and training loop.
 *   `src/predict.py`: Inference runner with plotting and logging tools.
 *   `tests/test_pipeline.py`: Comprehensive unit tests.
+
+---
+
+## 5. Hugging Face Spaces Deployment
+
+You can deploy this interactive interface directly on Hugging Face Spaces in just a few steps:
+
+### A. Create a New Hugging Face Space
+1. Log in to [Hugging Face](https://huggingface.co/).
+2. Click on **Spaces** in the top navigation bar, then click **Create new Space**.
+3. Set your Space name (e.g., `af-thermostability-cnn`).
+4. Select **Gradio** as the SDK.
+5. Choose **Public** or **Private** visibility, then click **Create Space**.
+
+### B. Upload files to the Space
+You can clone the Space repo locally via Git and copy all project files, or upload them directly via the Hugging Face Web UI:
+1. Copy/upload these key files and folders:
+   - `app.py`
+   - `best_model.pth`
+   - `requirements.txt`
+   - `README.md` (contains Hugging Face metadata at the top)
+   - `src/` (folder containing `model.py`, `predict.py`, `data_loader.py`)
+   - `data/` (folder containing `synthetic/` examples for Gradio)
+2. Commit and push the files. Hugging Face will automatically detect `app.py` and `requirements.txt`, install dependencies, and build/run the web app!
+
